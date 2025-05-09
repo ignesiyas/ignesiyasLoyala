@@ -14,12 +14,12 @@ export default function About() {
                 </div> 
             </div>
             <div className="height-auto flex md:items-start items-start justify-center flex-col">
-                <div className="md:pt-0 lg:pt-0 pt-8  md:pb-0 lg:pb-0 pb-4 md:pl-12 lg:pl-12 text-4xl md:text-4xl text-primary" > Hi I'm ,</div>
+                <div className="md:pt-0 lg:pt-0 pt-8  md:pb-0 lg:pb-0 pb-4 md:pl-12 lg:pl-12 text-4xl md:text-4xl text-primary" > Hi I&apos;m ,</div>
                 <div className="text-6xl md:text-9xl md:pl-10 pl-0 text-accent200 text-left md:text-left">
                     IGNESIYAS LOYALA
                 </div>
                 <div className="md:pl-12 lg:pl-12 pl-1">
-                    I'm an experienced developer with expertise in OutSystems, Next.js, and UI design. A logical thinker and a collaborative team player, I thrive on building efficient and innovative solutions.
+                    I&apos;m an experienced developer with expertise in OutSystems, Next.js, and UI design. A logical thinker and a collaborative team player, I thrive on building efficient and innovative solutions.
                 </div>
             </div>
         </div>
