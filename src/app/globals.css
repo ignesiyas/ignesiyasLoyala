@@ -16,7 +16,7 @@
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
   --primary: #2F6F6F;
-  --primary-200: #cddeda;
+  --primary-200: #87b5ac;
   --primary-300: #ebffff;
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
@@ -170,6 +170,9 @@
 .text-primary300{
   color: var(--primary-300);
 }
+.bg-background{
+  background-color: var(--background);
+}
 .bg-background200{
   background-color: var(--background-200);
 }
@@ -177,4 +180,70 @@
   background-color: var(--background-300);
 }
 
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
+@keyframes fadeSlideLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeSlideRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-slide-up {
+  animation: fadeSlideUp 1s ease-out forwards;
+}
+.fade-slide-down {
+  animation: fadeSlideDown 1s ease-out forwards;
+}
+.fade-slide-left {
+  animation: fadeSlideLeft 1s ease-out forwards;
+}
+.fade-slide-right {
+  animation: fadeSlideRight 1s ease-out forwards;
+}
+.fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}

@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${roboto.variable} font-roboto  antialiased md:px-40 px-10 py-4`}>
+      <body className={`${roboto.variable} font-roboto  antialiased md:px-40 px-5 py-4`}>
         <NavigationMenuWithActiveItem/>
         {children}
       </body>
