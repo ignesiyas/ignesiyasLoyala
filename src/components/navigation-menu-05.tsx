@@ -16,7 +16,7 @@ const navigationMenuItems = [
 
 export default function NavigationMenuWithActiveItem() {
   return (
-    <div className="w-full flex md:justify-end lg:justify-end justify-start fade-slide-down ">
+    <div className="w-full flex md:justify-end lg:justify-end justify-start">
     <NavigationMenu>
       <NavigationMenuList className="space-x-8">
         {navigationMenuItems.map((item) => (

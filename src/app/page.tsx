@@ -1,9 +1,9 @@
-import About from "./Components/About";
+import Portfolio from "./Components/Portfolio";
 
 export default function Home() {
   return (
      <div className="">
-      <About/>
+      <Portfolio/>
       </div>
   )
 }

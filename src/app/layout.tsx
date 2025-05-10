@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import NavigationMenuWithActiveItem from "@/components/navigation-menu-05";
-
+import * as motion from "motion/react-client"
 const roboto = Roboto({
   variable: "--font-roboto",
   subsets: ["latin"],
@@ -23,7 +23,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${roboto.variable} font-roboto  antialiased md:px-40 px-5 py-4`}>
-        <NavigationMenuWithActiveItem/>
+        <motion.div
+          initial={{ opacity: 0}}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0, duration: 0.4 }}>
+          <NavigationMenuWithActiveItem/>
+        </motion.div>
         {children}
       </body>
     </html>
