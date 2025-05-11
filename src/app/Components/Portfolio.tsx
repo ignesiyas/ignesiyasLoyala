@@ -56,7 +56,7 @@ export default function Portfolio() {
     const theme = setThemeState((state) => state.theme);  
     return (  
         <div>
-            <div className="flex w-full mt-10 md:flex-nowrap flex-wrap md:justify-center lg:justify-center justify-start items-center">
+            <div className="flex w-full mt-10 md:flex-nowrap flex-wrap md:justify-center lg:justify-center justify-start items-center px-0.5 md:px-0 lg:px-0">
                 <div className="md:h-[500px] lg:h-[500px]">
                 <motion.div
                 initial={{ opacity: 0 }}
@@ -144,7 +144,7 @@ export default function Portfolio() {
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: 1.2, duration: 0.4 }}>
-                    <div className="flex flex-wrap gap-2 md:ml-12 lg:ml-12 ml-1 mt-4">
+                    <div className="flex flex-wrap gap-4 md:ml-12 lg:ml-12 ml-0 mt-4">
                         <Taglist tags={techstacks}/>
                         <Taglist tags={personality}/>
                     </div>
