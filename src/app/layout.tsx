@@ -3,6 +3,7 @@ import { Roboto } from "next/font/google";
 import "./globals.css";
 import NavigationMenuWithActiveItem from "@/components/navigation-menu-05";
 import * as motion from "motion/react-client"
+import { ThemeProvider } from "@/components/ThemProvider";
 const roboto = Roboto({
   variable: "--font-roboto",
   subsets: ["latin"],
@@ -21,15 +22,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${roboto.variable} font-roboto  antialiased md:px-40 px-5 py-4`}>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
         <motion.div
           initial={{ opacity: 0}}
           animate={{ opacity: 1 }}
           transition={{ delay: 0, duration: 0.4 }}>
           <NavigationMenuWithActiveItem/>
         </motion.div>
-        {children}
+        { children}
+        </ThemeProvider>
       </body>
     </html>
   );
