@@ -135,7 +135,7 @@ export default function Portfolio() {
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: 1, duration: 0.4 }}>
-                        <div className="md:pl-12 lg:pl-12 pl-1 mt-2 ">
+                        <div className="md:pl-12 lg:pl-12 pl-1 mt-2 text-accent300">
                             I&apos;m a developer passionate about crafting innovative web solutions, specializing in front-end & Backend technologies, and thriving in collaborative environments.
                         </div>
                     </motion.div>

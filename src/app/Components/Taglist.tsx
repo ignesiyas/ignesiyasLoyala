@@ -19,7 +19,7 @@ export default function TechStack({tags}: TagListProps) {
 
   return (
     <div className="p-4 bg-background200 rounded-xl md:w-full lg:w-[40%] w-full">
-      <div className="text-accent300 font-semibold mb-4 text-xl">Tech Stacks</div>
+      <div className="text-accent200 font-semibold mb-4 text-xl">Tech Stacks</div>
       <div className="ml-1">
         <div className="flex flex-wrap gap-2">
           {tags.map((tag , index) => (

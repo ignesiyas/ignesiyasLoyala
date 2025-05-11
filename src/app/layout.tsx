@@ -33,8 +33,10 @@ export default function RootLayout({
         <motion.div
           initial={{ opacity: 0}}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0, duration: 0.4 }}>
-          <NavigationMenuWithActiveItem/>
+          transition={{ delay: 0, duration: 0.4 }}
+          className="sticky top-0 bg-background"
+          >
+            <NavigationMenuWithActiveItem/>
         </motion.div>
         { children}
         </ThemeProvider>
