@@ -1,9 +1,12 @@
+// app/layout.tsx
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
-import NavigationMenuWithActiveItem from "@/components/navigation-menu-05";
-import * as motion from "motion/react-client"
 import { ThemeProvider } from "@/components/ThemProvider";
+import NavigationMenuWithActiveItem from "@/components/navigation-menu-05";
+import ClientWrapper from "./Components/ClientWrapper"; // 👈 You’ll create this
+import * as motion from "motion/react-client"
+
 const roboto = Roboto({
   variable: "--font-roboto",
   subsets: ["latin"],
@@ -18,27 +21,24 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${roboto.variable} font-roboto  antialiased md:px-40 px-5 py-4`}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-        <motion.div
-          initial={{ opacity: 0}}
+      <body className={`${roboto.variable} font-roboto antialiased md:px-40 px-5 py-4`}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <ClientWrapper>
+          <motion.div
+          initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0, duration: 0.4 }}
-          className="sticky top-0 bg-background"
-          >
-            <NavigationMenuWithActiveItem/>
-        </motion.div>
-        { children}
+          className="sticky top-0 bg-background z-50"
+        >
+          <NavigationMenuWithActiveItem />
+          </motion.div>
+            {children}
+          </ClientWrapper>
         </ThemeProvider>
       </body>
     </html>
