@@ -261,3 +261,7 @@
 .fade-in {
   animation: fadeIn 1s ease-out forwards;
 }
+
+.clip-hexagon {
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+}

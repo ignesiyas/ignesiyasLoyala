@@ -26,7 +26,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${roboto.variable} font-roboto antialiased md:px-40 px-5 py-4`}>
+      <body className={`${roboto.variable} font-roboto antialiased w-full`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <ClientWrapper>
           <motion.div

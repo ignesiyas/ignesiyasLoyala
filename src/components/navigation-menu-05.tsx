@@ -30,7 +30,8 @@ export default function NavigationMenuWithActiveItem() {
   }, [resolvedTheme]);
 
   return (
-    <div className="w-full flex md:justify-end lg:justify-end justify-start items-center">
+    <div className="w-full flex md:justify-end lg:justify-end justify-start items-center py-4">
+      <div className="flex md:w-[90%] lg:w-[90%] w-[80%] justify-end md:px-20 lg:px-20 ">
       <NavigationMenu>
         <NavigationMenuList className="space-x-8">
           {navigationMenuItems.map((item) => (
@@ -56,7 +57,9 @@ export default function NavigationMenuWithActiveItem() {
           ))}
         </NavigationMenuList>
       </NavigationMenu>
-      <div className="ml-4 bg-background200 p-2 rounded-lg lg:translate-x-30 lg:translate-y-2 translate-x-15 translate-y-2">
+      </div>
+      <div className="flex md:w-[10%] lg:w-[10%] w-[20%] md:pr-20  lg:pr-20 pr-5 justify-end">
+      <div className="ml-4 bg-background200 p-2 rounded-lg">
         {mounted && (
           resolvedTheme === "dark" ? (
             <SunMoon
@@ -76,6 +79,7 @@ export default function NavigationMenuWithActiveItem() {
             />
           )
         )}
+      </div>
       </div>
     </div>
   );
