@@ -6,6 +6,8 @@ import Taglist from "./Taglist"
 import { motion ,useScroll,useTransform} from "motion/react"
 import setThemeState from "@/app/Zustand/store"
 import { useEffect, useState } from "react"
+import { useRef } from "react";
+import ProjectCard from "./ProjectCard"
 export default function Portfolio() {
     const { scrollY } = useScroll();
     const [isDesktop, setIsDesktop] = useState(true)
@@ -68,7 +70,12 @@ export default function Portfolio() {
         "Creative",
         "Innovative"
     ]  
-    const theme = setThemeState((state) => state.theme);  
+    const theme = setThemeState((state) => state.theme); 
+    const targetRef = useRef(null);
+    const { scrollYProgress } = useScroll({
+    target: targetRef,
+    });
+    const x = useTransform(scrollYProgress, [0, 1], ["1%", "-101%"]); 
     return (
         <div>
             <motion.div
@@ -170,9 +177,70 @@ export default function Portfolio() {
                 </div>
             </div> 
             </motion.div>
-            <div className="md:h-lvh lg:h-lvh">
-                
-            </div> 
+            <section ref={targetRef} className="relative h-[300vh] md:px-30 lg:px-30 px-0">
+            <div className="sticky top-20 flex h-screen items-start overflow-hidden flex-col bg">
+                <div className="text-2xl text-primary p-2  text-center w-full border-b-1 mb-4">Projects</div>
+                <motion.div style={{ x }} className="">
+
+                   <div className="flex gap-4"> 
+                        <ProjectCard 
+                        title="Lease Reconciliation System"
+                        description="This is a description of project 1."
+                        imageUrl="/project-management-7440746_1920.jpg"
+                        tags={["HTML", "CSS", "JavaScript","SQL","OutSystems","Rest API","SnowFlake"]}
+                        />
+                        <ProjectCard 
+                        title="CASA"
+                        description="This is a description of project 1."
+                        imageUrl="/project-management-7440746_1920.jpg"
+                        tags={["HTML", "CSS", "JavaScript","SQL","OutSystems","EppPlus"]}
+                        />
+                        <ProjectCard 
+                        title="Order Reconciliation System"
+                        description="This is a description of project 1."
+                        imageUrl="/project-management-7440746_1920.jpg"
+                        tags={["HTML", "CSS", "JavaScript","SQL","OutSystems","EppPlus","DraggableJS"]}
+                        />
+                        <ProjectCard 
+                        title="FMS"
+                        description="This is a description of project 1."
+                        imageUrl="/project-management-7440746_1920.jpg"
+                        tags={["HTML", "CSS", "JavaScript","SQL","OutSystems","EppPlus"]}
+                        />
+                        <ProjectCard 
+                        title="CMS"
+                        description="This is a description of project 1."
+                        imageUrl="/project-management-7440746_1920.jpg"
+                        tags={["HTML", "CSS", "JavaScript","SQL","OutSystems","EppPlus","Rest API","SharePoint"]}
+                        />
+                        <ProjectCard 
+                        title="RMS"
+                        description="This is a description of project 1."
+                        imageUrl="/project-management-7440746_1920.jpg"
+                        tags={["HTML", "CSS", "JavaScript","SQL","OutSystems","EppPlus","DraggableJS"]}
+                        />
+                        <ProjectCard 
+                        title="PRK"
+                        description="This is a description of project 1."
+                        imageUrl="/project-management-7440746_1920.jpg"
+                        tags={["HTML", "CSS", "JavaScript","Leaflet","Mapbox","OutSystems","EppPlus","Deepl","JiraAPI"]}
+                        />
+                        <ProjectCard 
+                        title="Aljaseer"
+                        description="This is a description of project 1."
+                        imageUrl="/project-management-7440746_1920.jpg"
+                        tags={["HTML", "CSS", "JavaScript","Outsystems"]}
+                        />
+                        <ProjectCard 
+                        title="Unifeeder (POC)"
+                        description="This is a description of project 1."
+                        imageUrl="/project-management-7440746_1920.jpg"
+                        tags={["HTML", "CSS", "JavaScript","Outsystems","Rest API"]}
+                    />
+                   </div>
+                </motion.div>
+            </div>
+            </section>
         </div>
     )
 }
