@@ -1,4 +1,3 @@
-import { Project } from "next/dist/build/swc/types";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
 import Tag from "./Tag";
