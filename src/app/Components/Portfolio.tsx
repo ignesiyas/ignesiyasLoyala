@@ -81,7 +81,7 @@ export default function Portfolio() {
             <motion.div
             style={isDesktop ? {scale} : {}}
             className="w-full h-full origin-top transition-transform duration-200 ease-out">
-            <div className=" flex w-full md:h-lvh lg:h-lvh  md:flex-nowrap flex-wrap md:justify-center lg:justify-center justify-start  md:items-start lg:items-start items-center md:px-40 lg:px-40 pt-10 p-4">
+            <div className=" flex w-full md:h-lvh lg:h-lvh  md:flex-nowrap flex-wrap md:justify-center lg:justify-center justify-center  md:items-start lg:items-start items-center md:px-40 lg:px-40 pt-10 p-4">
                 <div className="md:h-[500px] lg:h-[500px]">
                 <motion.div
                 initial={{ opacity: 0 }}
