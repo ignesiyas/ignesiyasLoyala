@@ -16,12 +16,14 @@ export default function projectCard(
     }:projectCardProps){
         return(
             <>
-            <Card className="min-w-[300px] min-h-[400px] bg-base-100 p-0 pb-2 shadow-sm">
+            <Card className="md:w-1/4 lg:w-1/4 w-full min-h-[400px] bg-base-100 p-0 pb-2 mb-4 md:mb-0 lg:mb-0  shadow-sm md:rounded-none lg:rounded-none">
                 <Image
                 src={imageUrl}
                 alt={title}
-                width={300}
-                height={180}
+                width={0}
+                height={0}
+                sizes="100vw"
+                className="w-full h-auto rounded"
                 />
                 <div className="py-2 px-4 flex gap-4 flex-col">
                     <CardTitle className="text-accent300">{title}</CardTitle>

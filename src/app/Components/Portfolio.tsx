@@ -177,70 +177,59 @@ export default function Portfolio() {
                 </div>
             </div> 
             </motion.div>
-            <section ref={targetRef} className="relative h-[300vh] md:px-30 lg:px-30 px-0">
-            <div className="sticky top-20 flex h-screen items-start overflow-hidden flex-col bg">
-                <div className="text-2xl text-primary p-2  text-center w-full border-b-1 mb-4">Projects</div>
-                <motion.div style={{ x }} className="">
+                    <div className="flex flex-col transform md:-translate-y-30 lg:-translate-y-30 md:px-30 lg:px-40 pt-5 p-4">
+                        <div className="mb-4 text-4xl text-primary text-center">Projects</div>
+                        <div className="w-full flex  flex-wrap justify-center "> 
+                                <ProjectCard 
+                                title="Lease Reconciliation System"
+                                description="This is a description of project 1."
+                                imageUrl="/project-management-7440746_1920.jpg"
+                                tags={["HTML", "CSS", "JavaScript","SQL","OutSystems","Rest API","SnowFlake"]}
+                                />
+                                <ProjectCard 
+                                title="CASA"
+                                description="This is a description of project 1."
+                                imageUrl="/project-management-7440746_1920.jpg"
+                                tags={["HTML", "CSS", "JavaScript","SQL","OutSystems","EppPlus"]}
+                                />
+                                <ProjectCard 
+                                title="Order Reconciliation System"
+                                description="This is a description of project 1."
+                                imageUrl="/project-management-7440746_1920.jpg"
+                                tags={["HTML", "CSS", "JavaScript","SQL","OutSystems","EppPlus","DraggableJS"]}
+                                />
+                                <ProjectCard 
+                                title="FMS"
+                                description="This is a description of project 1."
+                                imageUrl="/project-management-7440746_1920.jpg"
+                                tags={["HTML", "CSS", "JavaScript","SQL","OutSystems","EppPlus"]}
+                                />
+                                <ProjectCard 
+                                title="CMS"
+                                description="This is a description of project 1."
+                                imageUrl="/project-management-7440746_1920.jpg"
+                                tags={["HTML", "CSS", "JavaScript","SQL","OutSystems","EppPlus","Rest API","SharePoint"]}
+                                />
+                                <ProjectCard 
+                                title="RMS"
+                                description="This is a description of project 1."
+                                imageUrl="/project-management-7440746_1920.jpg"
+                                tags={["HTML", "CSS", "JavaScript","SQL","OutSystems","EppPlus","DraggableJS"]}
+                                />
+                                <ProjectCard 
+                                title="PRK"
+                                description="This is a description of project 1."
+                                imageUrl="/project-management-7440746_1920.jpg"
+                                tags={["HTML", "CSS", "JavaScript","Leaflet","Mapbox","OutSystems","EppPlus","Deepl","JiraAPI"]}
+                                />
+                                <ProjectCard 
+                                title="Unifeeder (POC)"
+                                description="This is a description of project 1."
+                                imageUrl="/project-management-7440746_1920.jpg"
+                                tags={["HTML", "CSS", "JavaScript","Outsystems","Rest API"]}
+                            />
+                        </div>
+                    </div>
 
-                   <div className="flex gap-4"> 
-                        <ProjectCard 
-                        title="Lease Reconciliation System"
-                        description="This is a description of project 1."
-                        imageUrl="/project-management-7440746_1920.jpg"
-                        tags={["HTML", "CSS", "JavaScript","SQL","OutSystems","Rest API","SnowFlake"]}
-                        />
-                        <ProjectCard 
-                        title="CASA"
-                        description="This is a description of project 1."
-                        imageUrl="/project-management-7440746_1920.jpg"
-                        tags={["HTML", "CSS", "JavaScript","SQL","OutSystems","EppPlus"]}
-                        />
-                        <ProjectCard 
-                        title="Order Reconciliation System"
-                        description="This is a description of project 1."
-                        imageUrl="/project-management-7440746_1920.jpg"
-                        tags={["HTML", "CSS", "JavaScript","SQL","OutSystems","EppPlus","DraggableJS"]}
-                        />
-                        <ProjectCard 
-                        title="FMS"
-                        description="This is a description of project 1."
-                        imageUrl="/project-management-7440746_1920.jpg"
-                        tags={["HTML", "CSS", "JavaScript","SQL","OutSystems","EppPlus"]}
-                        />
-                        <ProjectCard 
-                        title="CMS"
-                        description="This is a description of project 1."
-                        imageUrl="/project-management-7440746_1920.jpg"
-                        tags={["HTML", "CSS", "JavaScript","SQL","OutSystems","EppPlus","Rest API","SharePoint"]}
-                        />
-                        <ProjectCard 
-                        title="RMS"
-                        description="This is a description of project 1."
-                        imageUrl="/project-management-7440746_1920.jpg"
-                        tags={["HTML", "CSS", "JavaScript","SQL","OutSystems","EppPlus","DraggableJS"]}
-                        />
-                        <ProjectCard 
-                        title="PRK"
-                        description="This is a description of project 1."
-                        imageUrl="/project-management-7440746_1920.jpg"
-                        tags={["HTML", "CSS", "JavaScript","Leaflet","Mapbox","OutSystems","EppPlus","Deepl","JiraAPI"]}
-                        />
-                        <ProjectCard 
-                        title="Aljaseer"
-                        description="This is a description of project 1."
-                        imageUrl="/project-management-7440746_1920.jpg"
-                        tags={["HTML", "CSS", "JavaScript","Outsystems"]}
-                        />
-                        <ProjectCard 
-                        title="Unifeeder (POC)"
-                        description="This is a description of project 1."
-                        imageUrl="/project-management-7440746_1920.jpg"
-                        tags={["HTML", "CSS", "JavaScript","Outsystems","Rest API"]}
-                    />
-                   </div>
-                </motion.div>
-            </div>
-            </section>
-        </div>
-    )
-}
+                    </div>
+    )}
