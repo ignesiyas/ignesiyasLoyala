@@ -75,7 +75,6 @@ export default function Portfolio() {
     const { scrollYProgress } = useScroll({
     target: targetRef,
     });
-    const x = useTransform(scrollYProgress, [0, 1], ["1%", "-101%"]); 
     return (
         <div>
             <motion.div
