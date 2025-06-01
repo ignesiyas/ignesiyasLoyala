@@ -6,7 +6,6 @@ import Taglist from "./Taglist"
 import { motion ,useScroll,useTransform} from "motion/react"
 import setThemeState from "@/app/Zustand/store"
 import { useEffect, useState } from "react"
-import { useRef } from "react";
 import ProjectCard from "./ProjectCard"
 export default function Portfolio() {
     const { scrollY } = useScroll();
@@ -71,10 +70,6 @@ export default function Portfolio() {
         "Innovative"
     ]  
     const theme = setThemeState((state) => state.theme); 
-    const targetRef = useRef(null);
-    const { scrollYProgress } = useScroll({
-    target: targetRef,
-    });
     return (
         <div>
             <motion.div
