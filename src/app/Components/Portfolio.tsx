@@ -7,6 +7,7 @@ import { motion ,useScroll,useTransform} from "motion/react"
 import setThemeState from "@/app/Zustand/store"
 import { useEffect, useState } from "react"
 import ProjectCard from "./ProjectCard"
+import { Separator } from "@/components/ui/separator"
 export default function Portfolio() {
     const { scrollY } = useScroll();
     const [isDesktop, setIsDesktop] = useState(true)
@@ -171,9 +172,16 @@ export default function Portfolio() {
                 </div>
             </div> 
             </motion.div>
-                    <div className="flex flex-col transform md:-translate-y-30 lg:-translate-y-30 md:px-30 lg:px-40 pt-5 p-4">
-                        <div className="mb-4 text-4xl text-primary text-center">Projects</div>
-                        <div className="w-full flex  flex-wrap justify-center "> 
+                    <div className="flex flex-col  transform md:-translate-y-30 lg:-translate-y-30 md:mx-30 lg:mx-40 pt-5 p-4 rounded-2xl">
+                        <div className="flex justify-center">
+                            <div className="w-auto">
+                                    <h3 className="scroll-m-20 text-2xl font-semibold tracking-widest text-primary">
+                                        Project's
+                                    </h3>
+                                <Separator className="mt-2 mb-6 bg-primary200"/>
+                            </div>
+                        </div>
+                        <div className="w-full flex gap-x-[1%] flex-wrap justify-center "> 
                                 <ProjectCard 
                                 title="Lease Reconciliation System"
                                 description="This is a description of project 1."

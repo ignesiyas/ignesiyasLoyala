@@ -193,7 +193,9 @@
 .bg-background300{
   background-color: var(--background-300);
 }
-
+.letter-spaingMorewidest{
+  letter-spacing: 10px;
+}
 @keyframes fadeSlideUp {
   0% {
     opacity: 0;

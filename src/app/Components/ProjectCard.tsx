@@ -16,7 +16,7 @@ export default function projectCard(
     }:projectCardProps){
         return(
             <>
-            <Card className="md:w-1/4 lg:w-1/4 w-full min-h-[400px] bg-base-100 p-0 pb-2 mb-4 md:mb-0 lg:mb-0  shadow-sm md:rounded-none lg:rounded-none">
+            <Card className="md:w-[24%] lg:w-[24%] w-full min-h-[400px] bg-base-100 p-0 pb-2 mb-4  shadow-sm">
                 <Image
                 src={imageUrl}
                 alt={title}
