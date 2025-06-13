@@ -6,7 +6,6 @@ import Taglist from "./Taglist"
 import { motion ,useScroll,useTransform} from "motion/react"
 import setThemeState from "@/app/Zustand/store"
 import { useEffect, useState } from "react"
-import ProjectCard from "./ProjectCard"
 import { Separator } from "@/components/ui/separator"
 import Projects from "./Project"
 import { Input } from "@/components/ui/input"
@@ -57,15 +56,6 @@ export default function Portfolio() {
         svgcode:githubWhite
         }   
     }
-    const techstacks = [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "Next JS",
-        "React JS",
-        "OutSystems",
-        "C#"
-    ]
     const personality = [
         "Team Player",
         "Problem Solver",
@@ -194,7 +184,7 @@ export default function Portfolio() {
                     viewport={{ once: true }}
                     transition={{ delay: 1.2, duration: 0.4 }}>
                     <div className="flex flex-wrap gap-4 md:ml-12 lg:ml-12 ml-0 mt-4 w-[70%]">
-                        <Taglist heading="Personality" tags={personality}/>
+                        <Taglist tags={personality}/>
                     </div>
                     </motion.div>
                 </div>
@@ -204,7 +194,7 @@ export default function Portfolio() {
                         <div className="flex justify-center">
                             <div className="w-auto">
                                     <h3 id="Projects" className="scroll-m-20 text-2xl font-semibold tracking-widest text-primary">
-                                        Project's
+                                        Project&apos;s
                                     </h3>
                                 <Separator className="mt-2 mb-6 lg:mb-12 bg-primary200"/>
                             </div>

@@ -5,12 +5,11 @@ import { useEffect, useState } from "react";
 import Tag from "./Tag";
 
 type TagListProps = {
-    heading : string,
     tags: string[];
 }
 
 
-export default function TechStack({heading,tags}: TagListProps) {
+export default function TechStack({tags}: TagListProps) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {

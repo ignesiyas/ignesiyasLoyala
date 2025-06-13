@@ -1,5 +1,4 @@
 'use client';
-import { scrollToSection } from '@/app/Lenis/Lenis';
 import {
   NavigationMenu,
   NavigationMenuItem,
