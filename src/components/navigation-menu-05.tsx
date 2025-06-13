@@ -1,5 +1,5 @@
 'use client';
-
+import { scrollToSection } from '@/app/Lenis/Lenis';
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -14,15 +14,16 @@ import setThemeState from "@/app/Zustand/store";
 import { useEffect, useState } from "react";
 
 const navigationMenuItems = [
-  { title: "About", href: "#blog", icon: EqualApproximately, isActive: true },
-  { title: "Projects", href: "#docs", icon: AppWindow, isActive: false },
-  { title: "Contact", href: "#contact", icon: Contact, isActive: false },
+  { title: "About", href: "#About", icon: EqualApproximately, isActive: true },
+  { title: "Projects", href: "#Projects", icon: AppWindow, isActive: false },
+  { title: "Contact", href: "#Contact", icon: Contact, isActive: false },
 ];
 
 export default function NavigationMenuWithActiveItem() {
   const { resolvedTheme, setTheme } = useTheme();
   const ToggleTheme = setThemeState((state) => state.ToggleTheme);
   const [mounted, setMounted] = useState(false);
+  const [activemenuIndex,setActivemenu] = useState(0);
 
   useEffect(() => {
     setMounted(true);
@@ -34,9 +35,10 @@ export default function NavigationMenuWithActiveItem() {
       <div className="flex md:w-[90%] lg:w-[90%] w-[80%] justify-end md:px-20 lg:px-20 ">
       <NavigationMenu>
         <NavigationMenuList className="space-x-8">
-          {navigationMenuItems.map((item) => (
+          {navigationMenuItems.map((item,index) => (
             <NavigationMenuItem key={item.title}>
-              <NavigationMenuLink
+              <NavigationMenuLink 
+                onClick={()=>{setActivemenu(index)}}
                 className={cn(
                   "relative group inline-flex h-9 w-max items-center justify-center px-0.5 py-2 text-sm font-medium",
                   "before:absolute before:bottom-0 before:inset-x-0 before:h-[2px] before:bg-primary before:scale-x-0 before:transition-transform",
@@ -46,7 +48,7 @@ export default function NavigationMenuWithActiveItem() {
                   "data-[active]:before:scale-x-100 data-[state=open]:before:scale-x-100"
                 )}
                 asChild
-                active={item.isActive}
+                active={index == activemenuIndex}
               >
                 <Link href={item.href}>
                   <item.icon className="h-5 w-5 mr-2" />

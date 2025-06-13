@@ -1,5 +1,4 @@
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
-import Image from "next/image";
 import Tag from "./Tag";
 type projectCardProps = {
     title: string;
@@ -7,26 +6,17 @@ type projectCardProps = {
     imageUrl: string;
     tags: string[];
 }
-export default function projectCard(
+export default function ProjectCard(
     {
         title,
         description,
-        imageUrl,
         tags
     }:projectCardProps){
         return(
             <>
-            <Card className="md:w-[24%] lg:w-[24%] w-full min-h-[400px] bg-base-100 p-0 pb-2 mb-4  shadow-sm">
-                <Image
-                src={imageUrl}
-                alt={title}
-                width={0}
-                height={0}
-                sizes="100vw"
-                className="w-full h-auto rounded"
-                />
+            <Card className="w-full min-h-[250px] p-0 pb-2 mb-4 shadow-sm flex flex-row pt-5">
                 <div className="py-2 px-4 flex gap-4 flex-col">
-                    <CardTitle className="text-accent300">{title}</CardTitle>
+                    <CardTitle className="text-accent200">{title}</CardTitle>
                     <CardContent className="p-0 flex gap-4 flex-col text-sm">
                         <div>{description}</div>
                         <div className="flex flex-wrap gap-2 mt-2">

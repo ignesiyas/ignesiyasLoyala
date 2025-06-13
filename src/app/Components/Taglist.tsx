@@ -19,10 +19,9 @@ export default function TechStack({heading,tags}: TagListProps) {
   }, []);
 
   return (
-    <div className="p-4 bg-background200 rounded-xl md:w-full lg:w-[40%] w-full">
-      <div className="text-accent200 font-semibold mb-4 text-xl">{heading}</div>
+    <div className="rounded-xl md:w-full lg:w-full w-full">
       <div className="ml-1">
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2 ">
           {tags.map((tag , index) => (
             <motion.div
               key={tag}

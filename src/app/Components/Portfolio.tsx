@@ -8,6 +8,10 @@ import setThemeState from "@/app/Zustand/store"
 import { useEffect, useState } from "react"
 import ProjectCard from "./ProjectCard"
 import { Separator } from "@/components/ui/separator"
+import Projects from "./Project"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { Button } from "@/components/ui/button"
 export default function Portfolio() {
     const { scrollY } = useScroll();
     const [isDesktop, setIsDesktop] = useState(true)
@@ -15,7 +19,7 @@ export default function Portfolio() {
   // Only apply scale effect if screen is wider than 768px (tailwind md breakpoint)
   useEffect(() => {
     const handleResize = () => {
-      setIsDesktop(window.innerWidth >= 768)
+      setIsDesktop(window.innerWidth  >= 768)
     }
 
     handleResize() // initial check
@@ -73,14 +77,15 @@ export default function Portfolio() {
     const theme = setThemeState((state) => state.theme); 
     return (
         <div>
+            <div id={"About"} className="transform -translate-20"></div>
             <motion.div
             style={isDesktop ? {scale} : {}}
             className="w-full h-full origin-top transition-transform duration-200 ease-out">
-            <div className=" flex w-full md:h-lvh lg:h-lvh  md:flex-nowrap flex-wrap md:justify-center lg:justify-center justify-center  md:items-start lg:items-start items-center md:px-40 lg:px-40 pt-10 p-4">
+            <div className=" gradientBg flex w-full md:h-lvh lg:h-lvh  md:flex-nowrap flex-wrap md:justify-center lg:justify-center justify-center  md:items-start lg:items-start items-center md:px-40 lg:px-40 pt-10 p-4 ">
                 <div className="md:h-[500px] lg:h-[500px]">
                 <motion.div
                 initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
+                whileInView={{ opacity: 1 }}    
                 viewport={{ once: true }}
                 transition={{ delay: 0.4, duration: 0.4 }}>
                     <div className="flex md:justify-end lg:justify-end justify-center height-auto md:bg-transparent lg:bg-transparent sm:bg-primary200 md:rounded-none lg:rounded-none rounded-b-2xl  flex-col"> 
@@ -155,8 +160,32 @@ export default function Portfolio() {
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: 1, duration: 0.4 }}>
-                        <div className="md:pl-12 lg:pl-12 pl-1 mt-2 text-accent300">
-                            I&apos;m a developer passionate about crafting innovative web solutions, specializing in front-end & Backend technologies, and thriving in collaborative environments.
+                        <div className="md:pl-12 lg:pl-12 pl-1 mt-2 text-accent300 flex flex-col gap-2">
+                            <div className="flex gap-2 items-center">
+                                <div className="w-[8px] h-[8px] bg-primary200 rounded-[10px]">
+                                </div>
+                                <div>Full-stack developer crafting sleek web experiences</div>
+                            </div>
+                            <div className="flex gap-2 items-center">
+                                <div className="w-[8px] h-[8px] bg-primary200 rounded-[10px]">
+                                </div>
+                                <div>Skilled in front-end & back-end technologies</div>
+                            </div>
+                            <div className="flex gap-2 items-center">
+                                <div className="w-[8px] h-[8px] bg-primary200 rounded-[10px]">
+                                </div>
+                                <div>Team player who thrives in collaborative builds</div>
+                            </div>
+                            <div className="flex gap-2 items-center">
+                                <div className="w-[8px] h-[8px] bg-primary200 rounded-[10px]">
+                                </div>
+                                <div>Cybersecurity enthusiast with a focus on safe coding</div>
+                            </div>
+                            <div className="flex gap-2 items-center">
+                                <div className="w-[8px] h-[8px] bg-primary200 rounded-[10px]">
+                                </div>
+                                <div>Low-code developer with high-code curiosity</div>
+                            </div>
                         </div>
                     </motion.div>
                     <motion.div
@@ -164,74 +193,70 @@ export default function Portfolio() {
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: 1.2, duration: 0.4 }}>
-                    <div className="flex flex-wrap gap-4 md:ml-12 lg:ml-12 ml-0 mt-4">
-                        <Taglist heading="Tech stacks" tags={techstacks}/>
+                    <div className="flex flex-wrap gap-4 md:ml-12 lg:ml-12 ml-0 mt-4 w-[70%]">
                         <Taglist heading="Personality" tags={personality}/>
                     </div>
                     </motion.div>
                 </div>
             </div> 
             </motion.div>
-                    <div className="flex flex-col  transform md:-translate-y-30 lg:-translate-y-30 md:mx-30 lg:mx-40 pt-5 p-4 rounded-2xl">
+                    <div  className="flex flex-col  md:mx-30 lg:mx-40 pt-5 p-4 rounded-2xl md:md:h-lvh md:lg:h-lvh">
                         <div className="flex justify-center">
                             <div className="w-auto">
-                                    <h3 className="scroll-m-20 text-2xl font-semibold tracking-widest text-primary">
+                                    <h3 id="Projects" className="scroll-m-20 text-2xl font-semibold tracking-widest text-primary">
                                         Project's
                                     </h3>
-                                <Separator className="mt-2 mb-6 bg-primary200"/>
+                                <Separator className="mt-2 mb-6 lg:mb-12 bg-primary200"/>
                             </div>
                         </div>
-                        <div className="w-full flex gap-x-[1%] flex-wrap justify-center "> 
-                                <ProjectCard 
-                                title="Lease Reconciliation System"
-                                description="This is a description of project 1."
-                                imageUrl="/project-management-7440746_1920.jpg"
-                                tags={["HTML", "CSS", "JavaScript","SQL","OutSystems","Rest API","SnowFlake"]}
-                                />
-                                <ProjectCard 
-                                title="CASA"
-                                description="This is a description of project 1."
-                                imageUrl="/project-management-7440746_1920.jpg"
-                                tags={["HTML", "CSS", "JavaScript","SQL","OutSystems","EppPlus"]}
-                                />
-                                <ProjectCard 
-                                title="Order Reconciliation System"
-                                description="This is a description of project 1."
-                                imageUrl="/project-management-7440746_1920.jpg"
-                                tags={["HTML", "CSS", "JavaScript","SQL","OutSystems","EppPlus","DraggableJS"]}
-                                />
-                                <ProjectCard 
-                                title="FMS"
-                                description="This is a description of project 1."
-                                imageUrl="/project-management-7440746_1920.jpg"
-                                tags={["HTML", "CSS", "JavaScript","SQL","OutSystems","EppPlus"]}
-                                />
-                                <ProjectCard 
-                                title="CMS"
-                                description="This is a description of project 1."
-                                imageUrl="/project-management-7440746_1920.jpg"
-                                tags={["HTML", "CSS", "JavaScript","SQL","OutSystems","EppPlus","Rest API","SharePoint"]}
-                                />
-                                <ProjectCard 
-                                title="RMS"
-                                description="This is a description of project 1."
-                                imageUrl="/project-management-7440746_1920.jpg"
-                                tags={["HTML", "CSS", "JavaScript","SQL","OutSystems","EppPlus","DraggableJS"]}
-                                />
-                                <ProjectCard 
-                                title="PRK"
-                                description="This is a description of project 1."
-                                imageUrl="/project-management-7440746_1920.jpg"
-                                tags={["HTML", "CSS", "JavaScript","Leaflet","Mapbox","OutSystems","EppPlus","Deepl","JiraAPI"]}
-                                />
-                                <ProjectCard 
-                                title="Unifeeder (POC)"
-                                description="This is a description of project 1."
-                                imageUrl="/project-management-7440746_1920.jpg"
-                                tags={["HTML", "CSS", "JavaScript","Outsystems","Rest API"]}
-                            />
+                        <Projects/>
+                    </div>
+                    <div id={"Contact"} className="min-h-[300px] footer gradientBg w-full md:rounded-t-[5%] lg:rounded-t-[5%] rounded-t-md pb-5 ">
+                        <div id="ConductWrapper" className=" pt-5 p-4 md:mx-30 lg:mx-40 flex items-center flex-col">
+                            <div className="flex justify-center">
+                                <div className="w-auto ">
+                                    <h3 id="Projects" className="scroll-m-20 text-2xl font-semibold tracking-widest text-primary">
+                                        Conduct
+                                    </h3>
+                                    <Separator className="mt-2 mb-6 lg:mb-12 bg-primary200"/>
+                                </div>
+                            </div>
+                            <form className="w-full flex justify-center flex-col items-center">
+                                <div className="md:w-[40%] lg:w-[40%] w-[90%] flex flex-col gap-4">
+                                    <div>
+                                        <div className="mb-2 w-full">Name</div>
+                                        <Input 
+                                        placeholder="Name" 
+                                        name="Name"
+                                        required
+                                        type="text"
+                                        className="bg-white"
+                                        />
+                                    </div>
+                                    <div>
+                                        <div className="mb-2 w-full">Email</div>
+                                        <Input 
+                                        placeholder="Email" 
+                                        name="Email"
+                                        required
+                                        type="text"
+                                        className="bg-white"
+                                        />
+                                    </div>
+                                    <div>
+                                        <div className="mb-2 w-full">Message</div>
+                                        <Textarea 
+                                        placeholder="Message" 
+                                        rows={8}
+                                        name="Message"
+                                        required
+                                        className="min-h-[150px] bg-white"
+                                        />
+                                        </div>
+                                    <Button className="bg-primary">Submit</Button>
+                                 </div>
+                            </form>
                         </div>
                     </div>
-
                     </div>
     )}
