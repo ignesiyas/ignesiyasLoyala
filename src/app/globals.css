@@ -167,6 +167,12 @@ html{
 .bg-accent300{
   background-color: var(--accent-300);
 }
+.tagTechstack{
+  background-color: var(--accent-200);
+}
+.dark .tagTechstack{
+  background-color: #2d2d2d;
+}
 .text-accent200{
   color: var(--accent-200);
 }

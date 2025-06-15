@@ -1,3 +1,4 @@
+'use client'
 import {
   Carousel,
   CarouselContent,
@@ -7,14 +8,20 @@ import {
 } from "@/components/ui/carousel"
 import ProjectCard from "./ProjectCard"
 import Image from "next/image"
+import Autoplay from 'embla-carousel-autoplay'
+import React from "react"
 export default function Projects(){
+    const autoplay = React.useRef(
+    Autoplay({ delay: 3000, stopOnInteraction: true })
+  )
     return(
     <div className="w-full flex justify-center flex-col">
     <Carousel
-      opts={{
-        align: "start",
-      }}
+      plugins={[autoplay.current]}
+      opts={{ loop: true, align: 'start' }}
       className="w-full max-w-2/2"
+      onMouseEnter={autoplay.current.stop}
+      onMouseLeave={autoplay.current.reset}
     >
       <CarouselContent className="">
           <CarouselItem className="md:basis-1/2 lg:basis-1/3">

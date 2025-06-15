@@ -64,6 +64,16 @@ export default function Portfolio() {
         "Creative",
         "Innovative"
     ]  
+    const TechStack = [
+        "Outsystems",
+        "HTML",
+        "CSS",
+        "JS",
+        "SQL",
+        "C#",
+        "NextJS",
+        "ReactJs"
+    ] 
     const theme = setThemeState((state) => state.theme); 
     return (
         <div>
@@ -71,14 +81,14 @@ export default function Portfolio() {
             <motion.div
             style={isDesktop ? {scale} : {}}
             className="w-full h-full origin-top transition-transform duration-200 ease-out">
-            <div className=" gradientBg flex w-full md:h-lvh lg:h-lvh  md:flex-nowrap flex-wrap md:justify-center lg:justify-center justify-center  md:items-start lg:items-start items-center md:px-40 lg:px-40 pt-10 p-4 ">
+            <div className=" gradientBg flex w-full md:h-lvh lg:h-lvh  md:flex-nowrap flex-wrap md:justify-center lg:justify-center justify-center md:items-start lg:items-start items-center md:px-40 lg:px-40 pt-10 p-4 ">
                 <div className="md:h-[500px] lg:h-[500px]">
                 <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}    
                 viewport={{ once: true }}
                 transition={{ delay: 0.4, duration: 0.4 }}>
-                    <div className="flex md:justify-end lg:justify-end justify-center height-auto md:bg-transparent lg:bg-transparent sm:bg-primary200 md:rounded-none lg:rounded-none rounded-b-2xl  flex-col"> 
+                    <div className="flex md:justify-end lg:justify-end justify-center items-center height-auto md:bg-transparent lg:bg-transparent sm:bg-primary200 md:rounded-none lg:rounded-none rounded-b-2xl  flex-col"> 
                         <div className="h-[300px] w-[300px] md:h-[400px] md:w-[400px] lg:h-[400px] lg:w-[400px] bg-background200 md:clip-hexagon lg:clip-hexagon clip-hexagon rounded-bl-lg rounded-br-full overflow-hidden border-2 shadow-md shadow-primary300">
                             <motion.div
                             initial={{ opacity: 0 }}
@@ -125,6 +135,9 @@ export default function Portfolio() {
                                 <ProfileTag svGCode={theme == "light" ? Social.github.svgcode :Social.githubWhite.svgcode} url={theme == "light" ?Social.githubWhite.url:Social.github.url}/>  
                             </motion.div>
                         </div>
+                        <div className="flex justiy-center">
+                            <Taglist tags={TechStack} iscenter={true} />
+                        </div>
                     </div>
                 </motion.div>
                 </div>
@@ -154,27 +167,27 @@ export default function Portfolio() {
                             <div className="flex gap-2 items-center">
                                 <div className="w-[8px] h-[8px] bg-primary200 rounded-[10px]">
                                 </div>
-                                <div>Full-stack developer crafting sleek web experiences</div>
+                                <div>Engineering Full-Stack Solutions with Design Precision & Performance in Mind</div>
                             </div>
                             <div className="flex gap-2 items-center">
                                 <div className="w-[8px] h-[8px] bg-primary200 rounded-[10px]">
                                 </div>
-                                <div>Skilled in front-end & back-end technologies</div>
+                                <div>Proficient in Front-End & Back-End Technologies</div>
                             </div>
                             <div className="flex gap-2 items-center">
                                 <div className="w-[8px] h-[8px] bg-primary200 rounded-[10px]">
                                 </div>
-                                <div>Team player who thrives in collaborative builds</div>
+                                <div>Collaborative Team Player Thriving in Build-Driven Environments</div>
                             </div>
                             <div className="flex gap-2 items-center">
                                 <div className="w-[8px] h-[8px] bg-primary200 rounded-[10px]">
                                 </div>
-                                <div>Cybersecurity enthusiast with a focus on safe coding</div>
+                                <div>Cybersecurity Enthusiast Focused on Writing Safe, Resilient Code</div>
                             </div>
                             <div className="flex gap-2 items-center">
                                 <div className="w-[8px] h-[8px] bg-primary200 rounded-[10px]">
                                 </div>
-                                <div>Low-code developer with high-code curiosity</div>
+                                <div>Low-Code Developer with a Passion for High-Code Innovation</div>
                             </div>
                         </div>
                     </motion.div>
@@ -183,8 +196,8 @@ export default function Portfolio() {
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: 1.2, duration: 0.4 }}>
-                    <div className="flex flex-wrap gap-4 md:ml-12 lg:ml-12 ml-0 mt-4 w-[70%]">
-                        <Taglist tags={personality}/>
+                    <div className="flex flex-wrap gap-4 md:ml-12 lg:ml-12 ml-0 mt-4 md:w-[70%] lg:w-[70%] w-full">
+                        <Taglist tags={personality} iscenter = {false}/>
                     </div>
                     </motion.div>
                 </div>
